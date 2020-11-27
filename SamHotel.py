@@ -1,4 +1,3 @@
-#from IPython.display import clear_output
 class cashieringsystem:
 
     def __init__(self, a=0, r=0,receive=0,change=0,temp=0):
@@ -63,26 +62,17 @@ class cashieringsystem:
                 print("Total:", self.r)
                 if (self.r > 0):
                     receive = int(input("Input Money Paid:\n"))
-                    receive>=self.r
-                    while not True:
-                        print("Insufficient funds, kindly add {} to pay the total of {}".format(self.r-receive,self.r))
-                        receive = int(input("Re-Input Money Paid:\n"))
-                        print("Change:", receive - self.r)
-                        print("*****Thank You & Come Again!!!*****")
+                    change = receive - self.r
+                    while change >= 0:
+
+                        print("Change: KShs. {} \n\n *****Thank You & Please Come Again!!!*****".format(change))
                         quit()
-                    if receive >= self.r:
-                        print("Change:",receive - self.r)
-                        print("*****Thank You & Come Again!!!*****")
-                        quit()
+
             elif (c == 11):
                 quit()
             else:
                 print("Invalid option")
                 c = int(input("Choose:\n"))
-
-
-
-
 
 def main():
     a = cashieringsystem()
@@ -90,9 +80,5 @@ def main():
     while (1):
 
             a.foods()
-
-
-
-
 
 main()
